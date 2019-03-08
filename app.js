@@ -25,7 +25,15 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 const routing = require('./routes/router.js')
 app.use('/', routing)  // load routing
-
+app.get('/section1',(req,res)=>{
+res.sendFile(path.join(__dirname+'/public/section1.html'));
+})
+app.get('/section2',(req,res)=>{
+  res.sendFile(path.join(__dirname+'/public/section2.html'));
+  })
+  app.get('/section3',(req,res)=>{
+    res.sendFile(path.join(__dirname+'/public/section3.html'));
+    })
 server.listen(port, hostname, () => {
   // Tell the user where to find the app (use backtics with variables)
   console.log(`App running at http://${hostname}:${port}/`)
